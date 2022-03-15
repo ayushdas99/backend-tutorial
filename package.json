@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node backend/index",
-    "dev": "nodemon index",
-    "client": "npm start --prefix frontend"
+    "server": "nodemon backend/index",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Das",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "mongoose": "^6.2.5"
   },
   "devDependencies": {
+    "concurrently": "^7.0.0",
     "nodemon": "^2.0.15"
   }
 }
